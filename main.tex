@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{natbib}
+% CJFR / Canadian Science Publishing author-date style: no comma between
+% author and year in in-text citations, e.g. "(Paradis 2026)".
+\setcitestyle{aysep={}}
+\usepackage{titling}
+\usepackage{longtable}
+\usepackage{calc}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\pretitle{\begin{flushleft}\LARGE\bfseries}
+\posttitle{\par\end{flushleft}\vskip 1em}
+\preauthor{\begin{flushleft}\large}
+\postauthor{\par\end{flushleft}\vskip 0.75em}
+\predate{\begin{flushleft}\large}
+\postdate{\par\end{flushleft}\vskip 1em}
+\captionsetup[figure]{labelfont=bf,labelsep=space,name=Fig.}
+
+\title{Dynamic inconsistency of promised future yields in open-loop LP forest plans: an open, reproducible benchmark of Daugherty (1991)}
+\author{Gregory Paradis\\Department of Forest Resources Management, University of British Columbia, Canada\\Corresponding author: \texttt{gregory.paradis@ubc.ca}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\noindent\textbf{Keywords:} non-declining yield; forest planning; linear programming; even flow; harvest scheduling; reproducibility; open-loop control; ws3
+
+\input{sections/abstract}
+\input{sections/introduction}
+\input{sections/background}
+\input{sections/methods}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/conclusion}
+\input{sections/software-availability}
+
+\section*{Acknowledgements}
+Development of this work was supported by the Forest Resources Environmental Services Hub (FRESH) at the University of British Columbia. LLM-assisted tools contributed to code development and editing; the author reviewed and approved all content.
+
+\section*{Author contributions}
+G. Paradis designed the study, performed the analysis, and prepared the manuscript.
+
+\section*{Competing interests}
+The author is the developer of the open-source \texttt{ws3} framework used and extended in this work, and the paper provides a citable reference for it -- a non-financial competing interest declared in the interest of transparency. The author declares no financial competing interests.
+
+\section*{Data availability}
+All software, extracted case-study data, experiment configurations, the full per-cell simulation records, and the validation records supporting this paper are openly available in the \texttt{fresh-daugherty} repository at \url{https://github.com/UBC-FRESH/fresh-daugherty}. The complete benchmark record -- the grid summary and the per-cell projected and realized harvest trajectories for all 432 cells, together with the exact regeneration command and pinned dependency versions -- is tracked under \texttt{results/experiments/} and archived with a DOI at \url{https://doi.org/10.5281/zenodo.21981434} (release v0.1.0b1). The Umpqua planning documents are public-domain US Forest Service works accessible via HathiTrust (records 002547999 and 002439528).
+
+\bibliographystyle{apalike-doi}
+\bibliography{references}
+
+\end{document}
