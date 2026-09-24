@@ -1,6 +1,11 @@
 # Manuscript expansion plan — fresh_daugherty_manuscript
 
-Date: 2026-09-23. Status: planning baseline for the v0.2.0 scope expansion.
+Date: 2026-09-23. Status: IMPLEMENTED (2026-09-24) — the full revision pass is on `main`:
+co-author J. Fuchs added (title page + declarations; department/ORCID TODOs
+flagged in-line); E1–E4 extensions written into Methods (§3.5), Results (§4.1,
+Table 2, Figs. 2–3), Discussion (§5.1–5.4), Conclusion; abstract/keywords/
+introduction updated; supplement pointers precise (E5/P13.3). Remaining:
+J. Fuchs review comments (triage per below), then CJFR length/format check.
 
 This repo is the Overleaf-linked manuscript repo
 (`ubc-fresh/fresh_daugherty_manuscript`). **All manuscript work happens on
