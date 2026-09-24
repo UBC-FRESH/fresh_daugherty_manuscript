@@ -25,8 +25,8 @@
 \captionsetup[figure]{labelfont=bf,labelsep=space,name=Fig.}
 
 \title{Dynamic inconsistency of promised future yields in open-loop LP forest plans: an open, reproducible benchmark of Daugherty (1991) and four tests of mitigation}
-\author{Gregory Paradis\\Department of Forest Resources Management, University of British Columbia, Canada\\Corresponding author: \texttt{gregory.paradis@ubc.ca}\\[0.75em] Jasper Fuchs\\BOKU University of Natural Resources and Life Sciences, Vienna, Austria}
-% TODO: confirm JF department/institute and ORCID before submission.
+\author{Gregory Paradis\\Department of Forest Resources Management, University of British Columbia, Canada\\Corresponding author: \texttt{gregory.paradis@ubc.ca}\\[0.75em] Jasper M. Fuchs\\University of Natural Resources and Life Sciences, Vienna, Department of Economics and Social Sciences, Institute of Agricultural and Forestry Economics, Austria\\Forest Resources Management, Institute of Terrestrial Ecosystems, Department of Environmental Systems Sciences, ETH Zurich, Switzerland}
+% TODO: confirm JF department/institute and ORCID before submission.: https://orcid.org/0000-0001-5951-7897
 \date{\today}
 
 \begin{document}
@@ -48,13 +48,13 @@
 Development of this work was supported by the Forest Resources Environmental Services Hub (FRESH) at the University of British Columbia. LLM-assisted tools contributed to code development and editing; the authors reviewed and approved all content.
 
 \section*{Author contributions}
-G. Paradis designed the study, performed the analysis, and prepared the manuscript. J. Fuchs co-designed the extension experiments and contributed to interpretation and critical review of the manuscript.
+G. Paradis designed the study, performed the analysis, and prepared the manuscript. J. M. Fuchs co-designed the extension experiments and contributed to interpretation and critical review of the manuscript.
 
 \section*{Competing interests}
-G. Paradis is the developer of the open-source \texttt{ws3} framework used and extended in this work, and the paper provides a citable reference for it---a non-financial competing interest declared in the interest of transparency. The authors declare no financial competing interests.
+G. Paradis is the developer of the open-source \texttt{ws3} framework used and extended in this work, and the paper provides a citable reference for it -- a non-financial competing interest declared in the interest of transparency. The authors declare no financial competing interests.
 
 \section*{Data availability}
-All software, extracted case-study data, experiment configurations, the full per-cell simulation records, and the validation records supporting this paper are openly available in the \texttt{fresh-daugherty} repository at \url{https://github.com/UBC-FRESH/fresh-daugherty}. The curated supplement --- case-study data and validation anchors (\texttt{supplementary/01-case-study-data.md}), core-grid results (\texttt{supplementary/02-core-grid.md}), objective-gap-diagnostic evidence (\texttt{supplementary/03-gap-diagnostic.md}), per-landbase detail (\texttt{supplementary/04-landbases.md}), and the extension analyses with figures and tables --- starts at \url{https://github.com/UBC-FRESH/fresh-daugherty/tree/main/supplementary/README.md}. The complete benchmark record---the grid summary and the per-cell projected and realized harvest trajectories for all 432 cells, together with the exact regeneration command and pinned dependency versions---is tracked under \texttt{results/experiments/} (\url{https://github.com/UBC-FRESH/fresh-daugherty/tree/main/results/experiments}) and archived with a DOI at \url{https://doi.org/10.5281/zenodo.21981434} (release v0.1.0b1). The Umpqua planning documents are public-domain US Forest Service works accessible via HathiTrust (records 002547999 and 002439528).
+All software, extracted case-study data, experiment configurations, the full per-cell simulation records, and the validation records supporting this paper are openly available in the \texttt{fresh-daugherty} repository at \url{https://github.com/UBC-FRESH/fresh-daugherty}. The curated supplement -- case-study data and validation anchors (\texttt{supplementary/01-case-study-data.md}), core-grid results (\texttt{supplementary/02-core-grid.md}), objective-gap-diagnostic evidence (\texttt{supplementary/03-gap-diagnostic.md}), per-landbase detail (\texttt{supplementary/04-landbases.md}), and the extension analyses with figures and tables -- starts at \url{https://github.com/UBC-FRESH/fresh-daugherty/tree/main/supplementary/README.md}. The complete benchmark record -- the grid summary and the per-cell projected and realized harvest trajectories for all 432 cells, together with the exact regeneration command and pinned dependency versions -- is tracked under \texttt{results/experiments/} (\url{https://github.com/UBC-FRESH/fresh-daugherty/tree/main/results/experiments}) and archived with a DOI at \url{https://doi.org/10.5281/zenodo.21981434} (release v0.1.0b1). The Umpqua planning documents are public-domain US Forest Service works accessible via HathiTrust (records 002547999 and 002439528).
 
 \bibliographystyle{apalike-doi}
 \bibliography{references}
