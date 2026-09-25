@@ -24,12 +24,17 @@ A word on model form and size is warranted because a misconception about it circ
 Two design decisions in the standard formulation are important for this analysis. First, the objective is NPV: timber values and costs in each period are weighted by a discount factor, so early harvest income is preferred to late harvest income, all else being equal. Second, harvest-flow constraints, typically even-flow or bounded-deviation constraints on total volume between consecutive periods, create a direct link between decisions in different periods. The economics of such harvest-flow constraints -- the even-flow constraint and the allowable-cut effect it enables -- have a long critical literature \citep{thompson1966traditional,schweitzer1972allowable,luckert1995allowable,hegan2000economic}. Without such a between-period link, the multi-period problem decomposes, and open-loop and sequential solutions coincide. With it, the current period's decision changes the feasible set of every future subproblem.
 
 Writing \(H_t\) for the total harvest volume in period \(t\), without distinguishing among strata, the open-loop problem maximizes discounted net revenue subject to a harvest-flow constraint linking consecutive periods:
-\begin{equation}
-\max_{H_1, \ldots, H_T \geq 0} \;\; \sum_{t=1}^{T} \delta^{\,t} \, r_t \, H_t
-\qquad \text{s.t.} \qquad
-(1 - \alpha)\, H_t \;\le\; H_{t+1} \;\le\; (1 + \beta)\, H_t, \;\; t = 1, \ldots, T-1,
-\label{eq:openloop}
-\end{equation}
+\begin{subequations}\label{eq:openloop}
+    \begin{align}
+        \max_{H_1, \ldots, H_T \geq 0} \quad
+            & \sum_{t=1}^{T} \delta^{\,t} r_t H_t
+            \label{eq:openloop_obj} \\
+        \text{s.t.} \quad
+            & (1-\alpha) H_t \leq H_{t+1} \leq (1+\beta) H_t,
+            \quad t=1,\ldots,T-1.
+            \label{eq:openloop_flow}
+    \end{align}
+\end{subequations}
 where \(r_t\) is net revenue per unit volume in period \(t\) and \(\delta = (1+i)^{-1}\) is calculated from the interest rate $i$. The harvest-flow constraint is the classic FORPLAN bounded-deviation ("sequential flow") form \citep[eq.~3-4, 3-5]{daugherty1991credibility}: \(\alpha\) is the maximum allowed fractional \emph{decrease} and \(\beta\) the maximum allowed fractional \emph{increase} between consecutive periods. Its special cases span the standard harvest-flow policies: non-declining yield (\(\alpha = 0\), no increase bound; the yield may not fall), bounded decline (\(\alpha > 0\), no increase bound), and symmetric bounded deviation (\(\alpha = \beta > 0\)). This between-period link prevents the multi-period problem from decomposing into independent single-period problems.
 
 \hypertarget{daughertys-thesis}{%

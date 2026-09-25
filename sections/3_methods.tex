@@ -2,38 +2,67 @@
 \section{Methods}
 
 \hypertarget{case-study-the-umpqua-national-forest-forplan-model}{%
-\subsection{Case study: the Umpqua National Forest FORPLAN model}\label{case-study-the-umpqua-national-forest-forplan-model}}
+\subsection{Case study: Umpqua National Forest FORPLAN model}\label{case-study-the-umpqua-national-forest-forplan-model}}
 
-The case study reproduces the Umpqua National Forest FORPLAN planning model \citep{usda1987umpqua}, reconstructed in the open-source \texttt{ws3} wood-supply model \citep{paradis2026ws3}. The forest is stratified into four ecoclasses -- CH-CW, CD-CP, CR-CF, and CM-CE, dominated respectively by Douglas-fir, hemlock, fir, and hemlock types -- arrayed in decreasing growth potential. Seven silvicultural prescriptions are available, each with ecoclass-specific rotation-age ranges. The planning horizon is 150 years, divided into 15 periods of 10 years. The objective is maximization of net present value at a 4\% discount rate (varied in the experiments), with delivered-log prices escalating at 1\% per year for the first 50 years and constant thereafter. Volumes are expressed in thousands of cubic feet (MCF). The harvest-flow policy is the thesis's bounded-deviation \emph{sequential-flow} constraint of equation~\eqref{eq:openloop}, tying each period's total harvest volume to the previous period's; the specific policy levels are the thesis's six harvest-flow constraint sets (Section~\ref{experiment-design}). The initial forest is specified as one of a set of landbase conditions; the landbase of central interest (landbase 1) is an all-mature forest, the extreme of the disequilibrium structures the thesis studies.
+The case study reproduces the Umpqua National Forest FORPLAN planning model \citep{usda1987umpqua}, which was used in the thesis, reconstructed in the open-source \texttt{ws3} wood-supply model \citep{paradis2026ws3}. The forest is stratified into four ecoclasses of decreasing growth potential: Douglas-fir-dominated \textit{CH-CW}, hemlock-dominated \textit{CD-CP}, fir-dominated \textit{CR-CF}, and hemlock-dominated \textit{CM-CE}. Seven silvicultural prescriptions are available, each with ecoclass-specific rotation-age ranges. The planning horizon is 150~years, divided into 15~periods of 10~years. The objective is maximization of net present value at a 4\% discount rate (varied in the experiments), with delivered-log prices escalating at 1\% per year for the first 50 years and constant thereafter. Volumes are expressed in thousands of cubic feet (MCF). The harvest-flow policy is the bounded-deviation sequential-flow constraint of equation~\eqref{eq:openloop_flow}. The scenarios include six policy levels, represented by different harvest-flow constraint sets (Section~\ref{experiment-design}) and a set of landbase conditions, i.e.. initial forest; the landbase of central interest (landbase~1) is an all-mature forest, the extreme of the disequilibrium structures the thesis studies.
 
 \hypertarget{case-study-data}{%
 \subsection{Case-study data}\label{case-study-data}}
 
-The case study is built from the real Umpqua FORPLAN data, obtained from the public-domain Umpqua National Forest planning documents on HathiTrust. The per-age yield curves -- the volume removed per acre by age for each ecoclass, prescription, and management intensity -- come from the 1990 Final Environmental Impact Statement (FEIS) Appendix B \citep{usda1990umpqua} (the FORPLAN analysis volume: managed yield tables generated with the DFSIM Douglas-fir simulator, with operational-falldown adjustments, and the mountain-hemlock curve from Johnson's mountain-hemlock site equations). The economics come from the FEIS's timber-value derivations: stumpage, logging, and manufacturing costs by species (its Table B-65), the Douglas-fir price-diameter and pond-value relationships (Table B-66), and the per-ecoclass access (road) costs that make the high-elevation mountain-hemlock (CM-CE) prescriptions negatively valued. The yield-curve shapes are consistent with the LRMP's documented 95\% CMAI culmination ages by ecoclass (its Table IV-3: 85 years for CH-CW, 120 for CD-CP, 115 for CR-CF, 175 for CM-CE), and the FEIS Stage II financial analysis corroborates the thesis's anchor values (its mature-timber NPV range of \$1,800--\$7,700 per acre brackets the thesis's Table 5.4 mature-type NPVs; its managed-prescription range of \$27--\$290 per acre and the negative mountain-hemlock values match the thesis's Table 5.3 ordering and signs).
+The case study is built from the real Umpqua FORPLAN data (REF). The yield curves, i.e., the volume removed per acre by age for each ecoclass, prescription, and management intensity, come from the 1990 Final Environmental Impact Statement (FEIS) Appendix~B \citep{usda1990umpqua}. The managed yield tables in FORPLAN were generated with the DFSIM Douglas-fir simulator and adjusted to operational-falldown, while the mountain-hemlock yield curve was derived from Johnson's mountain-hemlock site equations. The economic parameters come from the FEIS's timber-value derivations: stumpage, logging, and manufacturing costs by species (Table~B-65), the Douglas-fir price-diameter and pond-value relationships (Table~B-66), and the per-ecoclass access (road) costs. These costs make the high-elevation mountain-hemlock (CM-CE) prescriptions negatively valued. The yield-curve shapes are consistent with the LRMP's documented 95\% CMAI culmination ages by ecoclass (Table~IV-3: 85~years for CH-CW, 120 for CD-CP, 115 for CR-CF, 175 for CM-CE), and the FEIS Stage~II financial analysis aligns with key values in the thesis: mature-timber NPV range of \$1,800--\$7,700 per acre, managed-prescription range of \$27--\$290 per acre, and the negative mountain-hemlock values.
 
-All source documents were obtained and machine-read from HathiTrust (public domain): the 1990 LRMP, the 1990 FEIS main volume and its Appendix B (the FORPLAN analysis volume), and the 1987 Draft EIS \citep{usda1987umpqua} that Daugherty used directly (the thesis's exact data vintage). The 1987 DEIS and 1990 FEIS yield tables agree, so the assembled case study uses Daugherty's exact data. The case study reproduces the thesis's printed anchor tables (Tables 5.3 and 5.4): the five mature vegetation types' model PNVs match their Table 5.4 anchors exactly (their standing volumes are set so that volume $\times$ the FEIS net delivered-log price equals the anchor), and the managed prescriptions match Table 5.3 in sign and broad rotation range (the exact optimal-rotation ordering is only partially reproduced, as the FEIS prescription mapping simplifies some treatments; Section 5.5). Because the mature volumes are derived from the Table 5.4 anchors, we additionally cross-check them against an independent source -- the FEIS standing-volume-by-age curves at each mature type's age -- which agree in order of magnitude. All data are typed, provenance-stamped records in the repository (\texttt{src/fresh\_daugherty/instance/}; data summary and anchor tables in \texttt{supplementary/01-case-study-data.md}); the extraction of the FEIS Appendix B tables is a one-time, documented, reproducible step, and the package does not depend on the scanned source at runtime.
+All source documents were obtained and machine-read from HathiTrust (public domain): the 1990 LRMP, the 1990 FEIS main volume and its Appendix B (the FORPLAN analysis volume), and the 1987 Draft EIS \citep{usda1987umpqua} that Daugherty used. We performed a set of consistency checks to ensure a consistent reproduction of Daugherty's case-study data. First, the 1987 DEIS and 1990 FEIS yield tables agree, confirming that the same yield data were used. Second, the reconstructed case study reproduces the key values reported in Daugherty's Tables~5.3 and 5.4. The model NPVs of the five mature vegetation types match the Table~5.4 values exactly, while the managed prescriptions reproduce the signs and broad rotation ranges reported in Table 5.3. The exact ordering of optimal rotations is only partially reproduced because the FEIS prescription mapping simplifies some treatments (Section~5.5). Finally, we cross-checked the reconstructed mature volumes against the FEIS standing-volume curves at the corresponding ages and found them to be of the same order of magnitude. All reconstructed data and their provenance are documented in the repository (\texttt{src/fresh\\\_daugherty/instance/}; data summary and anchor tables in \texttt{supplementary/01-case-study-data.md}).
 
 \hypertarget{the-sequential-replanning-simulator}{%
 \subsection{The sequential-replanning simulator}\label{the-sequential-replanning-simulator}}
 
-Dynamic inconsistency cannot be observed in a single open-loop solve; it is defined by what happens when the plan meets sequential re-optimization. Following the thesis's iterative LP simulation, we implement a sequential-replanning simulator:
+Dynamic inconsistency cannot be assessed from a single open-loop solution alone. It is revealed when the plan is subjected to sequential re-optimization. Following the thesis's iterative LP simulation, we implement a sequential-replanning simulator (Figure~\ref{fig:sequential-replanning}).
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Solve the open-loop LP from the current forest state over the horizon.
-\item
-  Apply the current period's decision from that solution.
-\item
-  Advance the forest state by one period: the realized area-by-age distribution is extracted from the model and becomes the initial condition of the next subproblem.
-\item
-  Re-solve the open-loop LP from the realized state over the (rolling) horizon.
-\item
-  Repeat to the end of the simulation, recording both the plan projected at each step and the decisions actually taken.
-\end{enumerate}
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    node distance=0.5cm,
+    >=latex,
+    every node/.style={font=\small},
+    box/.style={
+        rectangle,
+        rounded corners,
+        draw,
+        align=center,
+        text width=8.5cm,
+        minimum height=0.9cm
+    },
+    arrow/.style={->, thick}
+]
+\node[box] (solve) {
+Solve the open-loop LP from the initial forest state over the planning horizon
+};
+\node[box, below=of solve] (apply) {
+Apply the current-period decision from that solution
+};
+\node[box, below=of apply] (advance) {
+Advance the forest state by one period: extract the realized area-by-age distribution and use it as the initial condition of the next subproblem
+};
+\node[box, below=of advance] (resolve) {
+Re-solve the open-loop LP from the realized state over the rolling horizon
+};
+\node[box, below=of resolve] (record) {
+Record the projected plan and the decision actually taken
+};
+\draw[arrow] (solve) -- (apply);
+\draw[arrow] (apply) -- (advance);
+\draw[arrow] (advance) -- (resolve);
+\draw[arrow] (resolve) -- (record);
+\draw[arrow]
+    (record.east) -- ++(1.2,0)
+    |- node[pos=0.25,right,align=left]{Repeat until the end\\of the simulation}
+    (apply.east);
+\end{tikzpicture}
+\caption{Flow chart for the sequential-replanning simulation used to test dynamic consistency.}
+\label{fig:sequential-replanning}
+\end{figure}
 
-Two modeling decisions bear on the interpretation and are worth stating explicitly. First, each replan re-solves the harvest-scheduling problem with a \emph{fresh} harvest-flow constraint anchored to that subproblem's own trajectory, not carried from the prior period's realized harvest. This is the faithful reading of FORPLAN practice -- each decadal re-solve is a new plan with its own flow constraint -- and it is what allows the promised non-declining flow to be abandoned (the phenomenon). The alternative convention (anchoring each replan's first period to the realized previous harvest, i.e., carrying the flow-history as a standing rule) suppresses the phenomenon by forcing the realized trajectory to track the plan until the constraint becomes infeasible; we implemented it as an option and report the rolling- versus shrinking-horizon and reset conventions as a robustness consideration. Second, because LP optima can be non-unique, a divergence between the projected and realized harvest vectors could in principle reflect an alternate optimum rather than genuine inconsistency. To rule this out we add an \emph{objective-gap diagnostic}: at each replan we solve the subproblem freely and again with the period-1 harvest held to the announced plan's value (within a 1\% band), and we compare the two objectives. If the re-solved objective strictly exceeds the tail-fixed objective -- or the announced value is infeasible from the realized state -- the announced plan's tail is strictly suboptimal or unimplementable, i.e., genuinely dynamically inconsistent, not merely a different member of an optimal set.
+Two modeling decisions bear on the interpretation. First, each replan re-solves the harvest-scheduling problem with a \emph{fresh harvest-flow constraint} anchored to that subproblem's own trajectory, not carried from the prior period's realized harvest. This \textit{rolling-horizon} convention is in line with FORPLAN practice, each decadal re-solve is a new plan with its own flow constraint, and it is what allows the originally promised non-declining flow to be abandoned. The alternative \textit{shrinking-horizon} convention (anchoring each replan's first period to the realized previous harvest, i.e., carrying the flow history) suppresses potential inconsistencies due to re-planning by forcing the realized trajectory to track the plan until the constraint becomes infeasible. We implemented it as an option and report the rolling- versus shrinking-horizon and reset conventions as a robustness consideration. Second, because LP optima can be non-unique, a divergence between the projected and realized harvest vectors could, in principle, reflect an alternate optimum rather than genuine inconsistency. To rule this out, we add an \emph{objective-gap diagnostic}: at each replan, we solve the subproblem freely and again with the period-1 harvest held to the announced plan's value (within a 1\% band), and we compare the two objectives. If the re-solved objective strictly exceeds the tail-fixed objective -- or the announced value is infeasible from the realized state -- the announced plan's tail is strictly suboptimal or unimplementable, i.e., dynamically inconsistent, not merely a different member of an optimal set.
 
 The inconsistency measure is the divergence between the open-loop plan's projected per-period harvest and the realized replanned trajectory -- that is, the changes in decisions and in projected output levels over time between what was announced and what the re-solving planner actually does. Formally, with the open-loop projection \(p = (p_1, \ldots, p_T)\) and the realized replanned trajectory \(r = (r_1, \ldots, r_T)\), we measure the per-period divergence by the symmetric relative deviation
 \begin{equation}
