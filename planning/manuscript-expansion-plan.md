@@ -86,6 +86,12 @@ workflow; the detailed modelling plan is `planning/v0.2.0-plan.md` there
   `fresh-daugherty` (`results/experiments/`); no hand-typed results.
 - When JF's review comments arrive: triage into (a) manuscript edits here,
   (b) modelling-requests filed as issues in `fresh-daugherty`.
+- JF's Overleaf sidebar comments arrive via an export, not via git — see
+  `review/README.md`. **Export the comments before pulling manuscript changes
+  from GitHub**: Overleaf warns that a pull can displace comments and tracked
+  changes, and `6c82752` renamed every section file (`sections/methods.tex` →
+  `sections/3_methods.tex`), which is the rename kind that detaches anchors.
+  Triage sheet: `review/notes/TRIAGE.md`, keyed by Overleaf thread id.
 - Journal target remains CJFR; revisit length/figure limits once the
   extension results land (expansion may require trimming elsewhere).
 
@@ -97,3 +103,8 @@ workflow; the detailed modelling plan is `planning/v0.2.0-plan.md` there
    pointers here.
 3. Full manuscript revision pass integrating E1–E4 results + JF comments,
    then submission.
+
+## Typography conventions
+
+- Em dashes are `---` with no space on either side (`word---word`); never ` -- ` or ` - `.
+  `--` (no spaces) is only for number ranges (`47--86`). TikZ `--` path operators and math minus signs are not dashes.
