@@ -1,0 +1,8 @@
+# Pinned version of overleaf-comments-export (https://github.com/Mangluu/overleaf-comments-export).
+# Verified 2026-10-03 against the repository at tag/commit for 0.22.2: the CLI
+# flags, the OVERLEAF_SESSION environment variable, the comments.json schema
+# (schema_version 1.3, thread_id on every comment, resolved flag per thread) and
+# the --include-source behaviour all matched the documentation.
+#
+# overleaf-comments-export==0.22.2
+0.22.2

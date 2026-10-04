@@ -1,0 +1,7 @@
+# Overleaf project for this manuscript (not a secret; the project id is not a
+# credential). Used by review_import.py to check that an export came from the
+# right paper, and by review/bin/oce-export.sh for the container-side route.
+#
+# The session cookie is a separate thing entirely and lives in session-cookie
+# (gitignored, never commit it, never put it in this file).
+https://www.overleaf.com/project/6ab0b5dc616383cedb14e2fd

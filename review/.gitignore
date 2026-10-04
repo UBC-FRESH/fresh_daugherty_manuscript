@@ -1,0 +1,22 @@
+# Review exports are local working material, not repository content.
+#
+# The repository is public and the manuscript is not yet submitted: raw exports
+# contain unpublished prose and co-author comments, and `source/` holds
+# byte-identical copies of the manuscript. Keep them here, out of git.
+#
+# Tracked on purpose: review/README.md, review/bin/, review/config/overleaf-
+# project.txt, review/config/exporter-version.txt, review/tools/*.py,
+# review/notes/ (your own triage sheet).
+imports/
+imports-staging/
+current/
+config/session-cookie
+tools/.venv/
+tools/oce-out/
+tools/.fixture/
+__pycache__/
+*.pyc
+# Kept local (repo is public): verbatim co-author review comments and verbatim
+# quotes from a non-redistributable thesis scan. They live in the shared workspace.
+REVIEW-PLAN.md
+THESIS-CLAIMS-AUDIT.md
