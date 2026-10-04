@@ -20,3 +20,6 @@ __pycache__/
 # quotes from a non-redistributable thesis scan. They live in the shared workspace.
 REVIEW-PLAN.md
 THESIS-CLAIMS-AUDIT.md
+
+# Local antagonistic referee report (unpublished critique)
+REFEREE-R2-ANTAGONISTIC.md
