@@ -14,6 +14,7 @@
 \usepackage{bm}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{array}
 \usepackage{siunitx}
 \usepackage{caption}
 \usepackage{hyperref}
@@ -74,14 +75,14 @@ Development of this work was supported by the Forest Resources Environmental Ser
 GP: conceptualization, methodology, software, investigation, formal analysis, data curation, resources, funding acquisition, visualization, writing (original draft), writing (review and editing). JMF: methodology, validation, writing (original draft), writing (review and editing).
 
 \section*{Funding}
-% TODO (review X42): add the CFI project number, e.g. "(grant No. #####)", before submission.
-Funding: Computing hardware used in this research was purchased with funding from the Canada Foundation for Innovation. The contribution of Jasper M. Fuchs to this research was supported in part by the Swiss National Science Foundation (grant No. IZSEZ0\_242761). The authors declare no other specific funding for this work.
+The contribution of Jasper M. Fuchs to this research was supported in part by the Swiss National Science Foundation (grant No. IZSEZ0\_242761). The authors declare no other specific funding for this work.
 
 \section*{Competing interests}
 Gregory Paradis is the developer of the open-source \texttt{ws3} framework used and extended in this work, and the paper provides a citable reference for it---a non-financial competing interest declared in the interest of transparency. The authors declare no financial competing interests.
 
 \section*{Data availability}
-All software, extracted case-study data, experiment configurations, the full per-cell simulation records, and the validation records supporting this paper are openly available in the \texttt{fresh-daugherty} repository at \url{https://github.com/UBC-FRESH/fresh-daugherty}. The curated supplement---case-study data and validation anchors (\path{supplementary/01-case-study-data.md}), core-grid results (\path{supplementary/02-core-grid.md}), objective-gap-diagnostic evidence (\path{supplementary/03-gap-diagnostic.md}), per-landbase detail (\path{supplementary/04-landbases.md}), and the extension analyses with figures and tables---starts at \url{https://github.com/UBC-FRESH/fresh-daugherty/tree/main/supplementary/README.md}. The complete benchmark record---the grid summary and the per-cell projected and realized harvest trajectories for all 432 cells, together with the exact regeneration command and pinned dependency versions---is tracked under \path{results/experiments/} (\url{https://github.com/UBC-FRESH/fresh-daugherty/tree/main/results/experiments}) and archived with a DOI at \url{https://doi.org/10.5281/zenodo.21981434} (release v0.1.0b1). The Umpqua planning documents are public-domain US Forest Service works accessible via HathiTrust (records 002547999 and 002439528).
+All software, extracted case-study data, experiment configurations, the full per-scenario simulation records, and the validation records supporting this paper are openly available in the \texttt{fresh-daugherty} repository at \url{https://github.com/UBC-FRESH/fresh-daugherty}. The curated supplement---case-study data and validation anchors (\path{supplementary/01-case-study-data.md}), core-grid results (\path{supplementary/02-core-grid.md}), objective-gap-diagnostic evidence (\path{supplementary/03-gap-diagnostic.md}), per-landbase detail (\path{supplementary/04-landbases.md}), the extension analyses (\path{supplementary/05}--\texttt{08}), and the replanning-institution and robustness analyses (\path{supplementary/10-review-analyses.md}), with figures and tables---starts at \url{https://github.com/UBC-FRESH/fresh-daugherty/tree/main/supplementary/README.md}. The complete benchmark record---the scenario summary and the per-scenario projected and realized harvest trajectories for all 432 scenarios, together with the exact regeneration command and pinned dependency versions---is tracked under \path{results/experiments/} (\url{https://github.com/UBC-FRESH/fresh-daugherty/tree/main/results/experiments}) and archived with a DOI at \url{https://doi.org/10.5281/zenodo.21981434} (release v0.1.0b1). The Umpqua planning documents are public-domain US Forest Service works accessible via HathiTrust (records 002547999 and 002439528).
+% TODO (review S11): v0.1.0b1 predates the P14-P19 records; cut a new release after PRs #81, #90, #100, #109, #116, #122 merge and update this DOI, the release name, and references.bib (freshdaugherty).
 
 \bibliographystyle{apalike-doi}
 \bibliography{references}
